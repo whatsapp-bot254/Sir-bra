@@ -8,8 +8,8 @@
       "stop": "pm2 stop vajira-md",
      "restart": "pm2 restart vajira-md"
     },
-  "dependencies": {
-    "@whiskeysockets/baileys": "Obedweb3/bravinee-Baileys",              
+  "dependencies": {a
+    "@whiskeysockets/baileys": "Obedweb3/bravines-Baileys",              
     "@adiwajshing/keyed-db": "^0.2.4",
     "qrcode": "^1.5.3",
     "awesome-phonenumber": "^2.64.0",
