@@ -1,21 +1,20 @@
-FROM node:lts-buster
+# Use an official Node.js runtime as the base image
+FROM node:16
 
-RUN apt-get update && \
-  apt-get install -y \
-  ffmpeg \
-  imagemagick \
-  webp && \
-  apt-get upgrade -y && \
-  rm -rf /var/lib/apt/lists/*
-  
+# Set the working directory in the container
 WORKDIR /usr/src/app
 
-COPY package.json .
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-RUN npm install && npm install -g qrcode-terminal pm2
+# Install dependencies
+RUN npm install
 
+# Copy the rest of the application code
 COPY . .
 
-EXPOSE 5000
+# Expose the port the app runs on
+EXPOSE 3000
 
+# Command to run the application
 CMD ["npm", "start"]
